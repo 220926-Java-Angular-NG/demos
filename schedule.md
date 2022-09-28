@@ -5,7 +5,7 @@
 <br>
 <em><strong>10:15am - 1:00pm</strong></em> &nbsp; : 1 on 1s / Project Work / Self Study
 <br>
-<em><strong>1:00pm - 2:00pm</strong></em> &nbsp;&nbsp;&nbsp; : Lunch
+<em><strong>1:00pm - 2:00pm</strong></em> &nbsp;&nbsp;&nbsp;: Lunch
 
 ### Tuesday / Thursday
 <em><strong>10:00am - 10:15am</strong></em> : Daily Standup
