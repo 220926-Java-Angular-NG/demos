@@ -1,6 +1,5 @@
 
 public class Horse {
-
     // properties
     int numberOfLegs;
     int age;
