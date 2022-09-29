@@ -23,7 +23,7 @@ public class MathTests {
         int expected = 113;
 
         // all you need to do to call a static method, is reference the class itself
-        int actual = Math.sum();
+        int actual = Math.sum(a,b,c,d);
 
         // Java doesn't have a lot of built-in testing functionality
         // if we want that functionality, we need to use a library
@@ -32,6 +32,17 @@ public class MathTests {
         // JUnit has a library called Assertions!!!!!!
         // I can use asserts to confirm the efficacy or validity of results
         // assertEquals -> (expected, actual) -> if they are equal, we pass
+        // assertNotEquals
+        // assertTrue
+        // assertFalse
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void whenGivenFiveArgumentsSumReturnsValidResult(){
+        int actual = Math.sum(1,2,3,4,5);
+        int expected = 15;
+
         Assertions.assertEquals(expected, actual);
     }
 }
