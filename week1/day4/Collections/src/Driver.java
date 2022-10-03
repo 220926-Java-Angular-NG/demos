@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Driver {
     public static void main(String[] args){
-
         // A library/API for data storage -> Collections
         // List<DataType> name;
         // All of the Collections can take in a DataType so that the implementation is able to work with variable amount of classes
