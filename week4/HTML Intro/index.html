@@ -1,0 +1,277 @@
+<!-- HTML - Hypertext Markup Language
+this markup language is used for creating web oages and applications
+<!DOCTYPE html> - this is the root tag for our HTML document
+    -->
+
+ <!DOCTYPE html>
+ <html>
+ <!-- everything about our webpage will be nested within out html tag-->
+
+ <head>
+<!-- the head element contains all of our metadata associated with our webpage 
+this include -
+- title
+- character encoding and any references to external stylesheets  -->
+
+<title>
+   Welcome to the Jungle</title>
+
+<meta charset="utf-8">
+
+<!-- internal css -->
+<style>
+    /* the . operator allows for styling on classes */
+    /* .main{
+
+        /* text-align: right; */
+        /* float: right;
+
+    } */ 
+
+    .red,.main{
+      color: red;
+      text-decoration: underline;
+      font-style: italic;
+    }
+    /* # refers to the id of an element */
+    #file-select{
+        text-align: center;
+    }
+
+
+</style>
+
+
+
+<!-- todo: add external style sheet -->
+<link rel="stylesheet" href="style.css">
+
+ </head>
+
+
+
+ <body>
+
+    <!-- contains the actual content of our page that will be rendered 
+    on the screen by our browser -->
+
+    <!-- a div defines a devision of the web page -->
+    <div class="main">
+
+        <!-- our h1,h2,h3... are headings. as they increase in number they
+             decrease in  size -->
+        <h1>
+            I can make my Welcome's echo !
+        </h1>
+
+        <h1 style="text-align: center;">
+            Welcome
+        </h1>
+    
+        <h2>
+            Welcome
+        </h2>
+    
+        <h3>
+            Welcome
+        </h3>
+    
+        <h4>
+            Welcome
+        </h4>
+
+        <!-- p defines a paragraph. within this tag we cam have
+        as many lines of text we want -->
+        <p>
+            This is my first HTML paragraph
+        </p>
+
+    </div>
+
+    <!-- <br> adds breaks or new lines into the body of our webpage - they are 
+    one of the elements that are in fact self closing-->
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <h3>
+            Here is a link to google!
+        </h3>
+
+        <p> Click here --> <a href="https://www.google.com"> Google </a> </p>
+
+
+    </div>
+
+    <br>
+    <br>
+
+    <h2> This is our table</h2>
+
+    <!-- when creating a table all of the attitbutes and elements must be within the 
+    "table" tag -->
+    <table class="red">
+        <thead>
+            <!-- 'thead' refers to the head of the table i.e where 
+                the column names will be
+            'tr' / table row & 'th'/ table header
+            -->
+            <tr>
+                <th style="color: aqua;">Id</th>
+                <th style="color: blueviolet;">Name</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tiffany</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Vicky</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Victoria</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2> These are our Lists</h2>
+    <!-- ol : ordered lists - meaning there will be an ascending counter implicitly
+    added to our list
+    ul  : unordered list - there are no
+     numbered on the list instead there are bullet points 
+    
+    li: list element - refers to each list element itself-->
+    <ol>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ol>
+
+    <br>
+
+    <ul>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ul>
+
+    <!-- FORMS
+    An HTML form is a section of a document that contains controls such as
+    - textfields
+    - password fields
+    -check boxes
+    - radio buttons
+    - submit buttons
+    - menus
+
+    Using these elements the page can collect information from a
+     user which is typically submitted to a webserver
+
+     Why use an HtML form? it makes it much easier for a user 
+     to interact with a webpage, which in turn make it easier for 
+     companies to collect user data.
+
+    -->
+<!-- inline css -->
+    <div style="text-align: center;">
+        <h2 style="color: blue;"> Center Email Input </h2>
+        <form>
+            <label for="email-input"> Email address</label><br>
+            <input type="text" id="email-input"><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password"><br>
+        </form>
+    </div>
+
+
+    <div>
+
+        <!-- Radio buttons are used to let a user select exactly one
+             value from a predefined list of values -->
+        <form>
+            SELECT GENDER ( Radio buttons )
+            <br>
+            <input type="radio" name="gender" id="male">
+            <label for="male"> Male </label><br>
+            <input type="radio" name="gender" id="female">
+            <label for="female"> Female </label>
+
+        </form>
+
+
+        <h4>
+            Check Boxes
+        </h4>
+<!-- <b> : bold -->
+        <b> SELECT YOUR FAV SUBJECT</b><br>
+        <input type="checkbox" name="subject" id="math">
+        <label for="math">MATH</label>
+        <input type="checkbox" name="subject" id="science">
+        <label for="science">SCIENCE</label>
+
+
+    </div>
+    
+    <br>
+    <br>
+
+    <div>
+        <h2>
+            FILE SELECT 
+        </h2>
+
+        <form id="file-select">
+             <label for="file-select"> Upload:</label>
+             <input type="file" id="file-select">
+        </form>
+
+        <br>
+        <br>
+        <br>
+
+        <h1>Drop Down Menu</h1>
+        <form>
+            <label for="country"> Select Your Location</label>
+            <select name="country" id="country">
+                <option value="United States">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Mexico">Mexico</option>
+
+            </select>
+        </form>
+
+        <h1> Date / Int - Min & Max </h1>
+
+            <form>
+                <label for="datemax"> Enter a date before Jan 1, 1980</label>
+                <input type="date" id="datemax" max="1979-12-31"><br>
+
+                <label for="datemin"> Enter a date after Jan 1, 2000</label>
+                <input type="date" id="datemin" min="2000-01-02" ><br>
+
+                <label for="quantity"> Between 1 - 5: </label>
+                <input type="number" id="quantity" min="1" max="5"><br>
+
+
+            </form>
+
+
+    </div>
+
+    
+
+
+
+   
+    </body>    
+
+
+ </html>
