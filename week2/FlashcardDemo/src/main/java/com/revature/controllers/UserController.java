@@ -6,6 +6,8 @@ import io.javalin.http.Handler;
 
 public class UserController {
 
+
+
     UserService service;
 
     public UserController(){
@@ -43,6 +45,8 @@ public class UserController {
     //all
     public Handler getAllUsers = context -> {
 
+
+
         context.json(service.getAllUsers());
     };
 
@@ -52,13 +56,14 @@ public class UserController {
 
     public Handler getUserById = context -> {
         String param = context.pathParam("id");
+        User user = context.bodyAsClass(User.class);
 
         // we are going to wrap this logic in a try catch
 
         try {
             //this is the id that we are getting from our url
             int id =  Integer.parseInt(param);
-            User user = service.getUserById(id);
+            user = service.getUserById(id);
 
             if(user != null){
                 context.json(user).status(202);
@@ -115,6 +120,26 @@ public class UserController {
         }catch(NumberFormatException nFMException){
             System.out.println(nFMException.getMessage());
         }
+    };
+
+    public Handler loginUser = context -> {
+
+
+
+        User user = context.bodyAsClass(User.class);
+
+        user = service.loginUser(user);
+
+        if(user != null){
+
+           CurrentUser.currentUser = user;
+            System.out.println(CurrentUser.currentUser.getFirstname());
+            context.json(user);
+//            context.result("User has been successfully logged in").status(202);
+        } else {
+            context.result("Sorry Wrong user name or password").status(404);
+        }
+
     };
 
 

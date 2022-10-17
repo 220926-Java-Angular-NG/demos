@@ -31,10 +31,12 @@ public class Driver {
         app.put("/user",userController.updateUser);
         app.delete("/user", userController.deleteUser);
         app.delete("/user/{id}", userController.deleteUserById);
+        app.post("/login", userController.loginUser);
 
         //flashcard uris
         app.get("/flashcards", cardController.createNewFlashCard);
         app.post("/flashcard",cardController.createNewFlashCard);
+        app.get("/flashcard/{id}", cardController.getFlashCardById);
 
         /**
          * public: Available anywhere

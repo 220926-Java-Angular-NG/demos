@@ -59,6 +59,10 @@ public class UserService {
     return userRepo.deleteById(id);
   }
 
+  public User loginUser(User user){
+    return userRepo.loginUser(user);
+  }
+
 
 
 

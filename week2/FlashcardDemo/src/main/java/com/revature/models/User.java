@@ -6,6 +6,7 @@ public class User {
    private String lastname;
    private String email;
    private String password;
+   private boolean isAManager;
 
    // we have our no args constructor
     // if we do not create a default constructor one is created for us
@@ -28,6 +29,11 @@ public class User {
     public User(String firstname, String lastname, String email, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(String email, String password){
         this.email = email;
         this.password = password;
     }

@@ -34,8 +34,6 @@ public class UserRepo implements CRUDDaoInterface<User> {
     @Override
     public int create(User user) {
 
-
-
         //although it says create we are inserting into a table that is already created
         //however we are still creating a new row...
 
@@ -203,5 +201,32 @@ public class UserRepo implements CRUDDaoInterface<User> {
             System.out.println(sqlException.getMessage());
         }
         return false;
+    }
+
+    public User loginUser(User user){
+
+        try {
+
+            String sql = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getEmail());
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next() && rs.getString("pass_word").equals(user.getPassword())){
+
+                return new User(rs.getInt("id"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("email"),
+                        rs.getString("pass_word"));
+            }
+
+
+        }catch(Exception e){
+            System.out.println("This is the userDAO: " + e.getMessage());
+        }
+
+        return null;
     }
 }

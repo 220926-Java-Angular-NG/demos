@@ -95,7 +95,7 @@ public class FlashCardRepo implements CRUDDaoInterface<FlashCard> {
 
         try {
 
-            String sql = "SELECT * FROM flashcards WHERE id = ?";
+            String sql = "SELECT * FROM flashcards WHERE creator_id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1,id);
 
