@@ -71,5 +71,6 @@ let objEx = document.getElementById("obj-ex");
 // objEx.innerHTML = Person; this prints [object Object] in our innerHTML
 
 objEx.innerHTML = JSON.stringify(Person);
-//use stieng interolation to use get the propeties of the objects and use their values to create sentence
+
+//use string interpolation to get the propeties of the objects and use their values to create a sentence
 objEx.innerHTML=`My name is ${Person.fullname} and my id is ${Person[id]}`;
