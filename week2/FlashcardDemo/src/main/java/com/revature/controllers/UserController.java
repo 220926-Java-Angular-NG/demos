@@ -2,7 +2,13 @@ package com.revature.controllers;
 
 import com.revature.models.User;
 import com.revature.services.UserService;
+import io.javalin.core.util.Header;
 import io.javalin.http.Handler;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class UserController {
 
@@ -125,7 +131,6 @@ public class UserController {
     public Handler loginUser = context -> {
 
 
-
         User user = context.bodyAsClass(User.class);
 
         user = service.loginUser(user);
@@ -134,6 +139,7 @@ public class UserController {
 
            CurrentUser.currentUser = user;
             System.out.println(CurrentUser.currentUser.getFirstname());
+
             context.json(user);
 //            context.result("User has been successfully logged in").status(202);
         } else {
@@ -141,6 +147,7 @@ public class UserController {
         }
 
     };
+
 
 
 }
