@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Timing Events Example</title>
+
+    <style>
+        /* add css */
+        body{
+            background-color: beige;
+            font-family: sans-serif;
+        }
+
+        strong{
+            color: magenta;
+        }
+
+        /* Pseudoclass selectors in CSS allow us to alter the look of HTML
+        elemets based on what special state that the selected element is in */
+        strong:hover{
+            color: teal;
+        }
+
+        .color-bluegradient, .color-greengradient{
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .color-bluegradient{
+            /* the % refers to the alpha which means its transpareny 
+            */
+            transition: all 2s ease-in;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%,rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }
+
+        .color-greengradient{
+        transition: all 1s step-end;
+        background: rgb(2, 0, 36);
+        background: 90deg, rgba(2, 0, 36, 1)  ;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 25, 1) 35%, rgba(0, 255, 24, 1) 100%);
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+
+    <div id="example">
+
+        <h1>
+            Bubbling:  from child to parent element
+        </h1>
+
+        <p id="parent-1">
+            This is the <strong id="child-1">bubbling</strong> element
+        </p>
+
+        <button onclick="changeToBlue();"> Change My Look </button>
+        <hr>
+
+        <h1>
+            Capturing :  from parent to child element
+        </h1>
+
+        <p id="parent-2">
+            This is the <strong id="child-2">capturing</strong> element
+        </p>
+
+        <button onclick="changeToGreen();"> Change My Look </button>
+        <hr>
+
+
+    </div>
+    
+    <script src="./bubbling-capturing.js"></script>
+    <script src="./timing-events.js"></script>
+</body>
+</html>
