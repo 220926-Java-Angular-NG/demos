@@ -48,7 +48,7 @@ PostgreSQL ,
 Javalin , 
 JDBC , 
 Maven , 
-Git , 
+Git  
 
 ## Submission Requirements !
 
