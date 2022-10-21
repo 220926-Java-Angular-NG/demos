@@ -36,19 +36,19 @@ Based on the users birthdate, identify the zodiac sign and add it to users profi
 
 *FRONTEND:*
 
-HTML
-CSS 
+HTML , 
+CSS  , 
 JS (Restriction: FETCH API must be used to receive data from your API)
 
 *BACKEND:*
 
-Java
-Docker
-PostgreSQL
-Javalin
-JDBC
-Maven
-Git
+Java , 
+Docker , 
+PostgreSQL , 
+Javalin , 
+JDBC , 
+Maven , 
+Git , 
 
 ## Submission Requirements !
 
