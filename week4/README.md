@@ -27,17 +27,20 @@ This project must make the following webpages:
 
 		- Update the db with the users 'mood'
 
-#### Stretch Goals -
+### Stretch Goals -
+
 Based on the users birthdate, identify the zodiac sign and add it to users profile
 
-##### Techs -
-FRONTEND:
+
+## Techs -
+
+*FRONTEND:*
 
 HTML
 CSS 
 JS (Restriction: FETCH API must be used to receive data from your API)
 
-BACKEND:
+*BACKEND:*
 
 Java
 Docker
