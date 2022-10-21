@@ -52,4 +52,4 @@ Git
 Create a new repository in our github organization for your mini-project. The naming convention will be: `mini_project_[your_name]` - with [your_name] being replaced by your first name (without the square brackets of course!). 
 
 ## Presentations -
-The finalized version of your application must be pushed by Monday in order to present. You will give a 5-7 minute live demonstration of the web application - Be prepared to answer questions that I will have!
+The finalized version of your application must be pushed by Monday, October 23, 2022 @ 10AM EST in order to present. You will give a 5-7 minute live demonstration of the web application - Be prepared to answer questions that I will have!
