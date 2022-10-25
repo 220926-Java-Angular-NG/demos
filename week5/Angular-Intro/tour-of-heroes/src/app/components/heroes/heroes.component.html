@@ -1,0 +1,54 @@
+<!-- <p>heroes works!</p> -->
+<!-- {{ varaible name form our ts}} this is one way binding -->
+<!-- <p> {{hero}}'s Details </p>
+<p> {{hero}}'s id is: {{id}}</p> -->
+
+<!-- <h2>{{hero.name | uppercase}}'s Details </h2> -->
+<!-- pipes are a good way to format string, currency amounts,
+     dates, and other data display in the webpage
+    Agular has several built in pipes that ypu canuse and 
+    you can create customs pipes
+    -->
+<!-- <div><span>id: </span>{{hero.id}}</div>
+<div><span>name:</span>{{hero.name}}</div>
+
+
+<!- edit our hero -->
+<!-- <div>
+    <label for="name"> Hero name:</label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div> --> 
+<!-- Two way binding - this is how we allow data to flow both ways
+
+Inorder fr us t be able to use Two-way databinding we need to import FormsModules-->
+
+<!-- now where usong our mock-heroes aka our hero array as data for webpage-->
+
+<h2> My Heroes </h2>
+<ul class="heroes">
+    <!-- to have access to the hero variable name we have to use *ngFor which is a 
+    structural directive that will allow us to iterate through our heroes and select or
+access that heroes -->
+    <li *ngFor="let hero of heroes">
+        <!-- class binding is a way to add or remove
+        css from our webpage based on some condition
+    
+        syntax: [class.(classname)]="some condtion"
+    -->
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelected(hero)">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+        </button>
+    </li>
+</ul>
+
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}}'s Details</h2>
+    <div>id: {{selectedHero.id}}</div>
+    <div>
+        <label for="hero-name">Hero name:</label>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+
+</div>
