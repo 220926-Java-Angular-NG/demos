@@ -35,15 +35,27 @@ access that heroes -->
     
         syntax: [class.(classname)]="some condtion"
     -->
-        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelected(hero)">
+        <!-- <button [class.selected]="hero === selectedHero" type="button"
+         (click)="onSelected(hero)">
             <span class="badge">{{hero.id}}</span>
             <span class="name">{{hero.name}}</span>
-        </button>
+        </button> -->
+        <!-- note we are now using our routerLink to select our hero -->
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span>
+            {{hero.name}}
+        </a>
     </li>
 </ul>
 
+<!-- this is why we use @Input in our hero-detail TS file
+so that this parents component (heros component) can pass data to the child component
+(app-hero-details) : also known as One way data binding -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+<!-- we are freeing this hero-detail from the hold of the hero component -->
 
-<div *ngIf="selectedHero">
+
+<!-- <div *ngIf="selectedHero">
     <h2>{{selectedHero.name | uppercase}}'s Details</h2>
     <div>id: {{selectedHero.id}}</div>
     <div>
@@ -51,4 +63,4 @@ access that heroes -->
         <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
     </div>
 
-</div>
+</div> -->
