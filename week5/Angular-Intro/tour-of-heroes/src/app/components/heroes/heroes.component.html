@@ -45,6 +45,9 @@ access that heroes -->
             <span class="badge">{{hero.id}}</span>
             {{hero.name}}
         </a>
+        
+        <button type="button" class="delete" title="delete hero" 
+        (click)="delete(hero)">X</button>
     </li>
 </ul>
 
@@ -64,3 +67,16 @@ so that this parents component (heros component) can pass data to the child comp
     </div>
 
 </div> -->
+
+
+<!-- here we are adding the input field to create a new hero in our hero component html -->
+<div>
+    <label for="new-hero">Hero Name:</label>
+    <input id="new-hero" #heroName/>
+
+    <button type="button" class="add-button" (click)="add(heroName.value);
+     heroName.value=''">
+        Add Hero
+    </button>
+
+</div>

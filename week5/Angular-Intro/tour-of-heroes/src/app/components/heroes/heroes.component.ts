@@ -53,6 +53,26 @@ heroes: Hero[] = [];
       )
   }
 
+  add(name:string): void {
+    name = name.trim();
+
+    if(!name) {return;}
+
+    this.heroService.addHero({name} as Hero).subscribe(
+      hero => {
+        this.heroes.push(hero);
+      }
+    )
+
+  }
+
+  delete(hero: Hero):void {
+    //here we are uodatng our hero array to have every hero except
+    // the one were going to delete for our db
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
+  }
+
  
 
 }
