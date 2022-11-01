@@ -2,6 +2,8 @@ package com.revature;
 
 
 import io.javalin.Javalin;
+import io.javalin.http.Cookie;
+import io.javalin.http.Handler;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -13,12 +15,20 @@ public class Main {
         // A port is an extension of a URL -> localhost:8080
         // port 8080 is the standard for backend APIs
         // this method create a web server from our application
-        Javalin app = Javalin.create().start(8080);
+        Javalin app = Javalin.create(
+                config -> {
+                    config.contextPath = "/";
+                    config.enableCorsForAllOrigins();
+                }
+        ).start(8080);
+
         List<User> users = new ArrayList<>(); // take this list
         User u1 = new User("mickey", "mouse");
         User u2 = new User("minnie", "mouse");
+        User u3 = new User("bpinkerton", "1234");
         users.add(u1);
         users.add(u2);
+        users.add(u3);
 
         // we can configure locations to receive types of requests, and do something as a result
         // context -> an object to access EVERYTHING you need within the request and the response
@@ -30,6 +40,10 @@ public class Main {
         // URI -> Uniform Resource Identifier
         // URL -> Uniform Resource Location
 
+        app.before("/users", context -> {
+
+        });
+
         app.get("/users", context -> {
             // Javalin has a built-in object mapper capable of automatically mapping your objects to JSON
             // context.json(Object) will take the object, convert it to JSON, and load it into the response body
@@ -37,11 +51,20 @@ public class Main {
         });
 
         app.post("/users", context -> {
-
             // grab the user from the body
             // add the user to the list
             User user = context.bodyAsClass(User.class);
             users.add(user);
+        });
+
+        app.post("/login", context -> {
+            User user = context.bodyAsClass(User.class);
+
+            for(User u: users){
+                if(u.getUsername().equals(user.getUsername()) && u.getPassword().equals(user.getPassword())){
+                    context.cookieStore(u.getUsername(), u);
+                }
+            }
         });
 
         // Data Interchange Format -> Any medium through which you exchange DATA

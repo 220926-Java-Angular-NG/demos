@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        What are the two beans (classes) that we want to wire up into the IoC???
+
+        1. Driver - we are going to inject Driver with MOTDService via Constructor Injection
+        2. MOTDService - we are going to inject the defaultMOTDIndex via Setter Injection
+            - we also need to run the initMessages() method to initialize the values of the list
+    -->
+    <bean class="com.revature.Driver" name="DriverBean">
+        <constructor-arg name="service" ref="MotdServiceBean"/>
+    </bean>
+
+    <bean class="com.revature.MOTDService" name="MotdServiceBean" init-method="initMessages">
+        <property name="defaultMOTDIndex" value="3" />
+    </bean>
+</beans>
