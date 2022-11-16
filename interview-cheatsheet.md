@@ -865,7 +865,6 @@ An exception (or exceptional event) is a problem that arises during the executio
   - Cacheable
     - The cacheable constraint requires that a response should implicitly or explicitly label itself as cacheable or non-cacheable.
   -  Layered System
-  
     - The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior.
     - For example, in a layered system, each component cannot see beyond the immediate layer they are interacting with.
   - Code on Demand (Optional)
