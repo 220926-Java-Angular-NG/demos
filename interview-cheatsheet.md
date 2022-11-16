@@ -865,9 +865,11 @@ An exception (or exceptional event) is a problem that arises during the executio
   - Cacheable
     - The cacheable constraint requires that a response should implicitly or explicitly label itself as cacheable or non-cacheable.
   -  Layered System
+  
     - The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior.
     - For example, in a layered system, each component cannot see beyond the immediate layer they are interacting with.
   - Code on Demand (Optional)
+  
     - REST also allows client functionality to extend by downloading and executing code in the form of applets or scripts.
     - The downloaded code simplifies clients by reducing the number of features required to be pre-implemented. Servers can provide part of features delivered to the client in the form of code, and the client only needs to execute the code.
   
